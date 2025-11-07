@@ -1,6 +1,19 @@
 # Investment Calendar 2025
 
+[![Deploy Status](https://img.shields.io/badge/deploy-ready-brightgreen)](https://github.com/qstrux/investment_calendar_data.md)
+[![Build](https://img.shields.io/badge/build-passing-success)](https://github.com/qstrux/investment_calendar_data.md)
+[![License](https://img.shields.io/badge/license-proprietary-blue)](https://github.com/qstrux/investment_calendar_data.md)
+
 A professional investment calendar showcasing key financial events including FOMC meetings, economic data releases, and tech earnings reports for 2025.
+
+## 🌐 Live Demo
+
+🚀 **Coming Soon** - Deploy to see the live application
+
+<!-- After deployment, update with:
+- [Live Application](https://your-domain.pages.dev)
+- [Staging Environment](https://staging-your-domain.pages.dev)
+-->
 
 ## Features
 
@@ -62,20 +75,24 @@ npm run build
 
 The built files will be in the `dist` directory.
 
-## Deployment
+## 🚀 Deployment
 
-This project can be deployed to:
-- Cloudflare Pages
-- Vercel
-- Netlify
-- Any static hosting service
+This project is ready for deployment to multiple platforms. See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.
 
-### Cloudflare Pages
+### Quick Deploy
 
-1. Connect your GitHub repository to Cloudflare Pages
-2. Set build command: `npm run build`
-3. Set build output directory: `dist`
-4. Deploy!
+**Cloudflare Pages (Recommended)**
+1. Visit [Cloudflare Dashboard](https://dash.cloudflare.com/)
+2. Connect this GitHub repository
+3. Build command: `npm run build`
+4. Output directory: `dist`
+5. Deploy!
+
+**Alternative Platforms**
+- [Vercel](https://vercel.com) - One-click deploy
+- [Netlify](https://netlify.com) - Automatic setup
+
+For complete deployment instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md).
 
 ## Project Structure
 
