@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ChevronLeft, ChevronRight, Filter, X, Download } from "lucide-react";
+import { ChevronLeft, ChevronRight, Filter, X } from "lucide-react";
 import { allEvents, monthlyQuotes, type CalendarEvent } from "@/lib/investmentData";
 import SearchBar from "@/components/SearchBar";
 import AddToCalendarButton from "@/components/AddToCalendarButton";
