@@ -8,12 +8,13 @@ A professional investment calendar showcasing key financial events including FOM
 
 ## 🌐 Live Demo
 
-🚀 **Coming Soon** - Deploy to see the live application
+🚀 **[View Live Application](https://project-cd4688b0.pages.dev)** ← Click to see the live site!
 
-<!-- After deployment, update with:
-- [Live Application](https://your-domain.pages.dev)
-- [Staging Environment](https://staging-your-domain.pages.dev)
--->
+**Deployment URLs:**
+- **Production**: https://project-cd4688b0.pages.dev
+- **Latest Deploy**: https://368032c0.project-cd4688b0.pages.dev
+
+✅ Deployed successfully on Cloudflare Pages
 
 ## Features
 
