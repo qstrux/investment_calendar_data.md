@@ -12,13 +12,15 @@ A professional investment calendar showcasing key financial events including FOM
 
 **Deployment URLs:**
 - **Production**: https://project-cd4688b0.pages.dev
-- **Latest Deploy**: https://368032c0.project-cd4688b0.pages.dev
+- **Latest Deploy**: https://fcfc1b26.project-cd4688b0.pages.dev
 
 ✅ Deployed successfully on Cloudflare Pages
+🕐 All times displayed in Eastern Time (ET / America/New_York)
 
 ## Features
 
 - 📅 Interactive monthly calendar view
+- 🕐 **Eastern Time (ET) timezone support** - All dates based on New York time
 - 💼 FOMC meeting dates and insights
 - 📊 Economic data release tracking (CPI, PPI, Non-farm Payrolls)
 - 💻 Tech company earnings reports (Apple, Microsoft, Tesla, NVIDIA)
