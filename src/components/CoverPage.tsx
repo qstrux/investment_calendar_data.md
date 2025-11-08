@@ -32,6 +32,16 @@ export default function CoverPage({ onEnter }: CoverPageProps) {
             "Those who master time, deserve to master wealth."
           </p>
 
+          {/* Timezone Notice */}
+          <div className="pt-4 max-w-2xl mx-auto">
+            <div className="flex items-center justify-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-lg">
+              <span className="text-sm text-foreground/90">
+                🕐 <strong className="text-primary">All times in Eastern Time (ET)</strong>
+                {' '}— New York timezone
+              </span>
+            </div>
+          </div>
+
           {/* Branding */}
           <div className="pt-8 space-y-3">
             <div className="flex items-center justify-center gap-3 text-lg md:text-xl text-foreground/90">

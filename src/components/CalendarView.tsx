@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ChevronLeft, ChevronRight, Filter, X } from "lucide-react";
 import { allEvents, monthlyQuotes, type CalendarEvent } from "@/lib/investmentData";
+import { isInETMonth, compareETDates, getCurrentETDate } from "@/lib/dateUtils";
 import SearchBar from "@/components/SearchBar";
 import AddToCalendarButton from "@/components/AddToCalendarButton";
 import BulkExportButton from "@/components/BulkExportButton";
@@ -36,7 +37,8 @@ const categoryLabels = {
 };
 
 export default function CalendarView() {
-  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
+  // Use ET timezone for initial month
+  const [currentMonth, setCurrentMonth] = useState(getCurrentETDate().getMonth());
   const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(null);
   const [activeFilters, setActiveFilters] = useState<Set<string>>(new Set());
   const [showFilters, setShowFilters] = useState(false);
@@ -74,9 +76,9 @@ export default function CalendarView() {
 
   const monthEvents = useMemo(() => {
     return filteredEvents.filter(event => {
-      const eventDate = new Date(event.date);
-      return eventDate.getMonth() === currentMonth;
-    }).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+      // Use ET timezone-aware date comparison
+      return isInETMonth(event.date, currentMonth, 2025);
+    }).sort((a, b) => compareETDates(a.date, b.date));
   }, [currentMonth, filteredEvents]);
 
   const getDaysInMonth = (month: number) => {
@@ -113,7 +115,12 @@ export default function CalendarView() {
           <div className="flex items-center justify-between gap-4">
             <div className="flex-1">
               <h1 className="text-3xl font-bold text-foreground">2025 Investment Calendar</h1>
-              <p className="text-sm text-muted-foreground mt-1">Jenna Ryan CFA | Alpha Wealth Capital</p>
+              <p className="text-sm text-muted-foreground mt-1">
+                Jenna Ryan CFA | Alpha Wealth Capital
+                <span className="ml-2 px-2 py-0.5 bg-primary/10 text-primary rounded text-xs font-medium">
+                  🕐 Eastern Time (ET)
+                </span>
+              </p>
             </div>
             <div className="flex items-center gap-3 no-print">
               <div className="w-64">

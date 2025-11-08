@@ -1,12 +1,15 @@
 import type { CalendarEvent } from "./investmentData";
+import { parseETDate } from "./dateUtils";
 
 /**
  * Generate ICS (iCalendar) file content for a calendar event
+ * All dates are in Eastern Time (ET) timezone
  */
 export function generateICS(event: CalendarEvent): string {
-  const eventDate = new Date(event.date);
+  // Use ET timezone-aware date parsing
+  const eventDate = parseETDate(event.date);
   
-  // Format date for ICS (YYYYMMDD)
+  // Format date for ICS (YYYYMMDD) using ET timezone
   const formatDate = (date: Date): string => {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -15,8 +18,8 @@ export function generateICS(event: CalendarEvent): string {
   };
 
   // Parse time if available, otherwise use default times
-  let startTime = '083000'; // 8:30 AM default
-  let endTime = '093000';   // 9:30 AM default
+  let startTime = '083000'; // 8:30 AM ET default
+  let endTime = '093000';   // 9:30 AM ET default
   
   if (event.time) {
     if (event.time.includes('8:30 AM')) {
@@ -91,9 +94,10 @@ export function generateMultipleICS(events: CalendarEvent[]): string {
     String(now.getSeconds()).padStart(2, '0') + 'Z';
 
   const eventBlocks = events.map(event => {
-    const eventDate = new Date(event.date);
-    let startTime = '083000';
-    let endTime = '093000';
+    // Use ET timezone-aware date parsing
+    const eventDate = parseETDate(event.date);
+    let startTime = '083000'; // 8:30 AM ET
+    let endTime = '093000';   // 9:30 AM ET
     
     if (event.time) {
       if (event.time.includes('8:30 AM')) {
